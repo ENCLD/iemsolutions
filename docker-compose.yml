@@ -1,1 +1,16 @@
 
+services:
+  mariadb:
+    image: mariadb:latest
+    container_name: iemsolutions_mariadb
+    restart: unless-stopped
+    environment:
+      - MARIADB_ROOT_PASSWORD=9991
+      - MARIADB_DATABASE=iemsolutions
+      - MARIADB_USER=admin
+      - MARIADB_PASSWORD=9991
+    ports:
+      - "3307:3307"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+      - ./init:/docker-entrypoint-initdb.d
