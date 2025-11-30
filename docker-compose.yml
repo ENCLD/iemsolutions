@@ -10,7 +10,9 @@ services:
       - MARIADB_USER=admin
       - MARIADB_PASSWORD=9991
     ports:
-      - "3307:3307"
+      - "3306:3306"
     volumes:
       - mariadb_data:/var/lib/mysql
-      - ./init:/docker-entrypoint-initdb.d
+volumes:
+  mariadb_data:
+    driver: local
