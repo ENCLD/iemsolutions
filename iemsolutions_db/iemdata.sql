@@ -43,7 +43,7 @@ CREATE TABLE IEMProduct (
 CREATE TABLE IEMTuning (
   tuningID int(11) NOT NULL AUTO_INCREMENT,
   tuningDetails text,
-  PRIMARY KEY (tuningID),
+  PRIMARY KEY (tuningID)
   ) ENGINE=InnoDB DEFAULT CHARSET=UTF8MB4;
 
 -- Quality Categories
