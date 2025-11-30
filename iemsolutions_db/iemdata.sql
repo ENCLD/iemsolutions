@@ -42,11 +42,8 @@ CREATE TABLE IEMProduct (
 -- Create IEMTuning table
 CREATE TABLE IEMTuning (
   tuningID int(11) NOT NULL AUTO_INCREMENT,
-  productID int(11) NOT NULL,
   tuningDetails text,
   PRIMARY KEY (tuningID),
-  FOREIGN KEY (productID) REFERENCES
-  IEMProduct(productID) ON DELETE CASCADE
   ) ENGINE=InnoDB DEFAULT CHARSET=UTF8MB4;
 
 -- Quality Categories
@@ -77,11 +74,13 @@ INSERT INTO IEMProduct (productName, productDescription, categoryID, price, bran
 ('Moondrop Blessing 2', 'Flagship hybrid in-ear monitors with exceptional clarity', 1, 319.99, 2);
 
 -- Tunings
-INSERT INTO IEMTuning (productID, tuningDetails) VALUES
+INSERT INTO IEMTuning (tuningID, tuningDetails) VALUES
 (1, 'V-shaped sound signature with enhanced bass and treble'),
-(2, 'Neutral tuning with emphasis on midrange clarity'),
-(3, 'Balanced tuning with slight bass boost for added impact'),
-(4, 'Warm tuning with smooth mids and controlled highs');
+(2, 'Balanced tuning with emphasis on midrange clarity'),
+(3, 'Warm sound signature with smooth highs and rich lows'),
+(4, 'Neutral tuning for accurate sound reproduction'),
+(5, 'Bass-heavy tuning for energetic listening experience'),
+(6, 'Bright tuning with emphasis on high frequencies');
 
 COMMIT;
 
